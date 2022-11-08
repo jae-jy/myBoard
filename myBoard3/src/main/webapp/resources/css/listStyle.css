@@ -42,7 +42,7 @@ header, footer, nav, aside, section  {
 }
 /* header태그 */
 header {
-    height: 20%;
+    height: 30%;
     background-color:WHITE;
     border-top:2px solid black;
     border-bottom : 2px solid black;
