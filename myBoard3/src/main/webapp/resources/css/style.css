@@ -45,7 +45,7 @@ header, footer, nav, aside, section  {
 }
 /* header태그 */
 header {
-    height: 40%;
+    height: 30%;
     background-color:WHITE;
     border-top:2px solid black;
     border-bottom : 2px solid black;
@@ -196,9 +196,20 @@ div img{
 }
 
 #welcome{
+
+	
 	margin: 30px;
+	height:55px;
 }
 
 #com{
 	
+}
+
+.inline {
+    display: inline-block;
+}
+
+#register{
+	margin-bottom: 45px;
 }

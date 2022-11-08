@@ -9,6 +9,8 @@
 	<title>별똥별 게시판</title>
 	
 	<link href="${path}/resources/css/listStyle.css?after" rel="stylesheet" >
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="root">

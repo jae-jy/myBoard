@@ -6,12 +6,15 @@
 <html>
 <head>
 
-<link href="${path}/resources/css/style.css?after" rel="stylesheet" >
+<link href="${path}/resources/css/style.css?var" rel="stylesheet" >
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>별똥별 게시판</title>
+	
+	
+	
 </head>
 <body>
     <header>
@@ -22,9 +25,14 @@
 		
 	</header>
 	
-
-		<a href="/board/list"><button id = "welcome">환영합니다 (우리아이 행복지키러 바로가기)</button></a><br />
+<div class="nospace inline pushright">
+<a href="/board/list"><button id = "welcome"><pre>환영합니다
+(우리아이 행복지키러 바로가기)</pre></button></a>
 <a href="/board/listSearch"><button id = "com">게시판</button></a>
+
+
+</div>
+		
 
 <!-- 내용 추가 -->
 
@@ -39,7 +47,7 @@
 		<input type="password" id="userPass" name="userPass" />
 	</p>
 	<p><button type="submit">로그인</button></p>
-	<p><a href="/member/register">회원가입</a></p>
+	<p id="register"><a href="/member/register">회원가입</a></p>
 </form>
 </c:if>
 
