@@ -1,7 +1,7 @@
 # myBoard
-spring page
+#spring page
 
-<db>
+#DataBase
 
 create table myBoard (
     bno       number            not null,
