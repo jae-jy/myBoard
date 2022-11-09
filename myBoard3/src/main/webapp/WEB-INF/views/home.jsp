@@ -6,7 +6,7 @@
 <html>
 <head>
 
-<link href="${path}/resources/css/style.css?var" rel="stylesheet" >
+<link href="${path}/resources/css/style.css?after" rel="stylesheet" >
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
