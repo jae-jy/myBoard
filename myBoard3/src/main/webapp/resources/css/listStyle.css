@@ -12,18 +12,15 @@ body {
     
     font-family: 'Jeju Gothic', serif;
     margin : 0 auto;
+    font-family: "Nanum Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#board{
-    background-color : white;
-    margin : 0 auto;
-    width : 1200px;
-}
 
 #board1 {  
     margin : 0 auto;
     height:50%;
     width:100%;
+   
 }
 
 /*div의 아이디가 wapper*/
@@ -43,7 +40,7 @@ header, footer, nav, aside, section  {
 /* header태그 */
 header {
     height: 25%;
-    background-color:WHITE;
+    background-color:#f0f4ff;
     border-top:2px solid black;
     border-bottom : 2px solid black;
  
@@ -61,19 +58,27 @@ nav, section, aside {
 }
 /* nav 태그 */
 nav {
-  
+
     width: 15%;
     float : left;
     text-align: center;
-    
+    border-radius: 10px 100px / 120px;
    
+}
+
+nav:first-child{
+	background-color: #d2facd;
+}
+
+nav:last-child{
+	background-color: #fae9cf;
 }
 /* section태그  */
 section {
-    
+    background-color: #fddfe3;
     width: 50%;
     overflow:hidden;
-
+    border-radius: 10px 100px / 120px;
 }
 section p{
     padding-bottom: 5px;

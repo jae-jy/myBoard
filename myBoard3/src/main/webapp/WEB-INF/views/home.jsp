@@ -13,7 +13,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>별똥별 게시판</title>
 	
-	
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154128423-1&amp;l=dataLayer&amp;cx=c"></script>
+	<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MWRTFRM"></script>
 	
 </head>
 <body>
@@ -25,17 +27,33 @@
 		
 	</header>
 	
-<div class="nospace inline pushright">
-<a href="/board/list"><button id = "welcome"><pre>환영합니다
-(우리아이 행복지키러 바로가기)</pre></button></a>
-<a href="/board/listSearch"><button id = "com">게시판</button></a>
+<div class="sec01_chat">
+<button class="w-btn w-btn-skin">
+<a href="/board/list" >
+<h3>환영합니다!
+<span>
+우리아이 행복지키러 바로가기
+</span>
+
+</h3>
+
+</a>
+</button>
+
+
+
+<button class="w-btn w-btn-yellow">
+<a href="/board/listSearch">게시판</a>
+</div>
 
 
 </div>
 		
 
 <!-- 내용 추가 -->
-
+<div id="child">
+<img src="${path}/resources/images/아이.jpg"/>
+</div>
 <c:if test="${member == null}">
 <form role="form" method="post" autocomplete="off" action="/member/login">
 	<p>
@@ -43,7 +61,7 @@
 		<input type="text" id="userId" name="userId" />
 	</p>
 	<p>
-		<label for="userPass">패스워드</label>
+		<label for="userPass">비밀번호</label>
 		<input type="password" id="userPass" name="userPass" />
 	</p>
 	<p><button type="submit">로그인</button></p>
@@ -62,6 +80,7 @@
 	<a href="member/logout">로그아웃</a>
 	
 </c:if>
+
 	
 <footer><p>About Us : Strange Developer Shooting Star</p>	</footer>
 

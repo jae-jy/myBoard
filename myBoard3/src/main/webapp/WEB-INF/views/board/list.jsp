@@ -11,6 +11,11 @@
 	<link href="${path}/resources/css/listStyle.css?ver" rel="stylesheet" >
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154128423-1&amp;l=dataLayer&amp;cx=c"></script>
+	<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MWRTFRM"></script>
+
 </head>
 <body>
 <div id="root">
