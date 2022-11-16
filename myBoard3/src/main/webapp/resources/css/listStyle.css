@@ -13,6 +13,7 @@ body {
     font-family: 'Jeju Gothic', serif;
     margin : 0 auto;
     font-family: "Nanum Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
 }
 
 
@@ -83,6 +84,9 @@ section {
 section p{
     padding-bottom: 5px;
     border-bottom: 2px solid black;
+    	text-align: center;
+		margin-left:20px;
+	margin-right: 20px;
 }
 /* aside 태그 */
 aside {
@@ -202,11 +206,6 @@ header form{
 	height:30%;
 }
 
-section p{
-	text-align: center;
-		margin-left:20px;
-	margin-right: 20px;
-}
 
 table{
 	margin-left: 60px;
