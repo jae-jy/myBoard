@@ -243,7 +243,7 @@ div button{
 	
 }
 div button:hover{
-	background: #f0f4ff;
+	background-color: #f0f4ff;
 	
 }
 
@@ -261,4 +261,44 @@ button a span:hover,
 button a:hover{
 	color: black;
 }
+
+form div{
+	display: flex;
+	justify-content: center;
+}
+
+form div p button{
+	background-color: #69a3bd;
+	border-color: #ffbdbdbd;
+	border-radius: 5px;
+	border-style:solid;
+	border-width: 1.2px;
+	color: black;
+}
+
+form div p button a{
+	color: black;
+}
+
+form div p button:hover,
+form div p button a:hover{
+	color: white;
+}
+
+
+
+form p:nth-child(2) {
+	margin-bottom: 0px;
+}
+
+footer{
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+form div button:hover{
+	background-color: #69a3bd;
+	
+}
+
 

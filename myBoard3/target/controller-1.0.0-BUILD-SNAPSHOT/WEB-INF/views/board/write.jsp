@@ -2,17 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-	<title>kuzuro 게시판</title>
+	<title>별똥별 게시판</title>
 </head>
 <body>
 
 <div id="root">
-	<header>
-		<%@include file="include/header.jsp" %>
-	</header>
-	<nav>
-		<%@include file="include/nav.jsp" %>
-	</nav>
+
 
 	<section id="container">
 	
@@ -42,9 +37,6 @@
 	
 	</section>
 
-	<footer>
-		<%@include file="include/footer.jsp" %>		
-	</footer>
 
 </div>
 

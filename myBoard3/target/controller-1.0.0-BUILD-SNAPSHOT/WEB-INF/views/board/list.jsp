@@ -6,18 +6,40 @@
 
 <html>
 <head>
-	<title>kuzuro 게시판</title>
+	<title>별똥별 게시판</title>
+	
+	<link href="${path}/resources/css/listStyle.css?ver" rel="stylesheet" >
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154128423-1&amp;l=dataLayer&amp;cx=c"></script>
+	<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MWRTFRM"></script>
+
 </head>
 <body>
 <div id="root">
 	<header>
 		<%@include file="include/header.jsp" %>
+		
 	</header>
-	<nav>
-		<%@include file="include/nav.jsp" %>
-	</nav>
-	<section id="container">
-		<h2>글 목록</h2>
+	<!--네비게이션-->
+            <div id = "board1">
+            <nav>
+                <p>내아이 지킴이</p>
+                <ul>
+                    <li><a href="/board/chart">내아이 성장과정</a></li>
+                    <li><a href="http://www.google.com">내아이 사진보기</a></li>
+                    <li><a href="https://blog.naver.com/sungbumvv">오늘의 기록</a></li>
+                    <li><a href="board.do">내글 보기</a></li>
+                </ul>
+            </nav>
+            
+            
+	<section>
+	
+
+		<p><a href="/board/listSearch">엄마·아빠들의 커뮤니티</a></p>
 		
 		<table>
 			<tr><th>글 번호</th><th>글 제목</th><th>작성자</th><th>작성일자</th></tr>	
@@ -33,9 +55,19 @@
 			<!-- 목록 끝 -->
 		</table>
 	</section>
+	
+	
+	<nav>
+	<p>메뉴</p>
+		<%@include file="include/nav.jsp" %>
+	</nav>
+	</div>
+
+
+</div>
+
 	<footer>
 		<%@include file="include/footer.jsp" %>		
 	</footer>
-</div>
 </body>
 </html>

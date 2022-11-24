@@ -6,7 +6,7 @@
 
 <html>
 <head>
-	<title>kuzuro 게시판</title>
+	<title>별똥별 게시판</title>
 	
 	<!-- 제이쿼리 -->
 	<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
@@ -28,9 +28,14 @@
 	<header>
 		<%@include file="include/header.jsp" %>
 	</header>
-	<nav>
-		<%@include file="include/nav.jsp" %>
-	</nav>
+<ul class="nav nav-pills">
+
+<li><a href="/">홈</a></li>
+<li><a href="/board/list">메인 페이지</a></li>
+<li><a href="/board/write">글 작성</a></li>
+<li><a href="/">로그인</a></li>
+
+</ul>
 	<!-- <section id="container"> -->
 	<section>
 		<h2>글 목록</h2>

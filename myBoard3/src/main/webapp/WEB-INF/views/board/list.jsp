@@ -28,7 +28,7 @@
             <nav>
                 <p>내아이 지킴이</p>
                 <ul>
-                    <li><a href="http://www.naver.com">내아이 성장과정</a></li>
+                    <li><a href="/board/chart">내아이 성장과정</a></li>
                     <li><a href="http://www.google.com">내아이 사진보기</a></li>
                     <li><a href="https://blog.naver.com/sungbumvv">오늘의 기록</a></li>
                     <li><a href="board.do">내글 보기</a></li>

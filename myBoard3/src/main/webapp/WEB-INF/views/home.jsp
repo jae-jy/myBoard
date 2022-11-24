@@ -6,7 +6,7 @@
 <html>
 <head>
 
-<link href="${path}/resources/css/style.css?ver" rel="stylesheet" >
+<link href="${path}/resources/css/style.css?after" rel="stylesheet" >
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +33,7 @@
 <h3>환영합니다!
 <span>
 우리아이 행복지키러 바로가기
+<span>(메인 페이지)</span>
 </span>
 
 </h3>
@@ -64,8 +65,11 @@
 		<label for="userPass">비밀번호</label>
 		<input type="password" id="userPass" name="userPass" />
 	</p>
+	<div>
 	<p><button type="submit">로그인</button></p>
-	<p id="register"><a href="/member/register">회원가입</a></p>
+	<p id="register"><button><a href="/member/register">회원가입</a></button></p>
+	</div>
+	
 </form>
 </c:if>
 
@@ -74,11 +78,13 @@
 </c:if>
 
 <c:if test="${member != null}">
-	<p>${member.userName}님 환영합니다.</p>
-	
-	<a href="member/modify">회원정보 수정</a>, <a href="member/withdrawal">회원탈퇴</a><br />
-	<a href="member/logout">로그아웃</a>
-	
+<form>
+	<p>${member.userName}님 환영합니다!</p>
+	<div>
+	<p><button type="submit"><a href="member/modify">회원정보 수정</a></button><p> <p><button type="submit"><a href="member/withdrawal">회원탈퇴</a><br /></button></p>
+	<p><button type="submit"><a href="member/logout">로그아웃</a></button></p>
+	</div>
+	</form>
 </c:if>
 
 	
