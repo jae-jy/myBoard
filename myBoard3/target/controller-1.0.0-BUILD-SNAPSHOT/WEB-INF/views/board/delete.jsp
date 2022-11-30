@@ -4,6 +4,7 @@
 <html>
 <head>
 	<title>별똥별 게시판</title>
+	<link href="${path}/resources/css/registerStyle.css?after" rel="stylesheet" >
 	
 	<!-- 제이쿼리 -->
 	<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
@@ -12,26 +13,23 @@
 <body>
 
 <div id="root">
-	<header>
-		<%@include file="include/header.jsp" %>
-	</header>
-	<nav>
-		<%@include file="include/nav.jsp" %>
-	</nav>
+
 
 	<section id="container">
 		<form role="form" method="post" autocomplete="off">
 		
-					
-			<p>
-				<label for="bno">글 번호</label>
-				<input type="text" id="bno" name="bno" value="${delete}" readonly="readonly" />
+		<div><img src="${path}/resources/images/별똥별.png"/></div>
+        <hr>		
+			<div>
+				<b class="name">글 번호</b><br>
+				<input type="text" style="text-align:center" id="userName"  name="bno" value="${delete}" readonly="readonly" />
 				
-			</p>
+			</div>
 			<p>정말로 삭제하시겠습니까?</p>
-			<p>
-				<button type="submit">예, 삭제합니다.</button><br />
-				<button type="button" id="cancel_btn">아니오, 삭제하지 않습니다.</button>
+			<div>
+				<button type="submit" class="sign_up">예, 삭제합니다.</button><br />
+				<div> </div>
+				<button type="button" id="cancel_btn" class="sign_up">아니오, 삭제하지 않습니다.</button>
 
 				<script>
 				// 폼을 변수에 저장
@@ -47,7 +45,7 @@
 						+ "&keyword=${scri.keyword}";						
 				});
 				</script>
-			</p>
+			</div>
 		</form>
 	</section>
 

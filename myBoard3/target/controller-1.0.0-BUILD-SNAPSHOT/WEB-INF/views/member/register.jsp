@@ -3,29 +3,33 @@
 <html>
 <head>
 	<title>별똥별 게시판</title>
+	<link href="${path}/resources/css/registerStyle.css?after" rel="stylesheet" >
 </head>
 <body>
 
 <form role="form" method="post" autocomplete="off">
-	<p>
-		<label for="userId">아이디</label>
+<div id="main"><img src="${path}/resources/images/별똥별.png"/></div>
+        <hr>
+        <div>
+        <b class="name">아이디</b><br>
 		<input type="text" id="userId" name="userId" />
-	</p>
-	<p>
-		<label for="userPass">패스워드</label>
+		</div>
+	<div>
+		<b class="name">비밀번호</b><br>
 		<input type="password" id="userPass" name="userPass" />
-	</p>
-	<p>
-		<label for="userName">닉네임</label>
-		<input type="text" id="userName" name="userName" />
-	</p>
-	<p>
-		<button type="submit">가입</button>
-	</p>		
+		</div>
+	<div>
 	
-	<p>
-		<a href="/">처음으로</a>
-	</p>
+		<b class="name">닉네임</b><br>
+		<input type="text" id="userName" name="userName" />
+		</div>
+	<div>
+		<button type="submit" class="sign_up">가입</button>
+		</div>	
+	
+	<div>
+		<button type="submit" class="sign_up"><a href="/">처음으로</a></button>
+	</div>
 	
 </form>
 

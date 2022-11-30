@@ -36,7 +36,7 @@
 	<c:if test="${msg == false}">
 		<p>로그인을 하셔야 글을 작성할 수 있습니다.</p>
 		
-		<p><a href="/">홈으로</a></p>	
+		<p><button type="button" class="sign_up"><a href="/">홈으로</a></button></p>	
 	</c:if>
 	
 	

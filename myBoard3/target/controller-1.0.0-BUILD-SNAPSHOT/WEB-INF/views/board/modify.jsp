@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>별똥별 게시판</title>
-	
+	<link href="${path}/resources/css/registerStyle.css?after" rel="stylesheet" >
 	<!-- 제이쿼리 -->
 	<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 	
@@ -12,40 +12,37 @@
 <body>
 
 <div id="root">
-	<header>
-		<%@include file="include/header.jsp" %>
-	</header>
-	<nav>
-		<%@include file="include/nav.jsp" %>
-	</nav>
 	<section id="container">
 	
 		<form role="form" method="post" autocomplete="off">
 		
-		
-			<p>
-				<label for="bno">글 번호</label>
-				<input type="text" id="bno" name="bno" value="${modify.bno}" readonly="readonly" />
-			</p>
+		<div><img src="${path}/resources/images/별똥별.png"/></div>
+        <hr>
+			<div>
+				<b class="name">글 번호</b><br>
+				<input type="text"  style="text-align:center" id="userId" name="bno" value="${modify.bno}" readonly="readonly" />
+			</div>
 			
-			<p>
-				<label for="title">글 제목</label>
-				<input type="text" id="title" name="title" value="${modify.title}" />
-			</p>
-			<p>
-				<label for="content">글 내용</label>
-				<textarea id="content" name="content" >${modify.content}</textarea>
-			</p>
-			<p>
-				<label for="writer">작성자</label>
-				<input type="text" id="writer" name="writer" value="${modify.writer}" readonly="readonly"/><br />
+			<div>
+				<b class="name">글 제목</b><br>
+				<input type="text" id="userId" name="title" value="${modify.title}" />
+			</div>
+			<div>
+				<b class="name">글 내용</b><br>
+				<textarea rows="6" cols="50" id="content" name="content" >${modify.content}</textarea>
+			</div>
+			<div>
+				<b class="name">작성자</b><br>
+				<input type="text"  style="text-align:center" id="userId" name="writer" value="${modify.writer}" readonly="readonly"/><br />
+				</div>
+				<div id="bottom">
 				<label>작성 날짜</label>
 				<span><fmt:formatDate value="${modify.regDate}" pattern="yyyy-MM-dd" /></span>
-			</p>
-			<p>
-				<button type="submit">수정</button>
-				<button type="button" id="cancel_btn">취소</button>
-				
+			</div>
+			<div>
+				<button type="submit" class="sign_up">수정</button>
+				<button type="button" id="cancel_btn" class="sign_up">취소</button>
+			</div>	
 				<script>
 				// 폼을 변수에 저장
 				var formObj = $("form[role='form']");  

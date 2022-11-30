@@ -2,6 +2,7 @@ package com.kuzuro.controller;
 
 import java.util.List;
 
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -22,6 +23,7 @@ import com.kuzuro.domain.ReplyVO;
 import com.kuzuro.domain.SearchCriteria;
 import com.kuzuro.service.BoardService;
 import com.kuzuro.service.ReplyService;
+
 
 @Controller
 @RequestMapping("/board/*")
@@ -243,6 +245,7 @@ public void getReplyDelete(@RequestParam("rno") int rno,
 	model.addAttribute("scri", scri);
 }
 	
+
 	
 	   
 }

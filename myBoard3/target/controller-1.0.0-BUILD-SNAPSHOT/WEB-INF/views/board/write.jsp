@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>별똥별 게시판</title>
+	<link href="${path}/resources/css/registerStyle.css?after" rel="stylesheet" >
 </head>
 <body>
 
@@ -13,19 +14,22 @@
 	
 	<c:if test="${msg == null}">
 		<form role="form" method="post" autocomplete="off">
-			<p>
-				<label for="title">글 제목</label><input type="text" id="title" name="title" />
-			</p>
-			<p>
-				<label for="content">글 내용</label><textarea id="content" name="content"></textarea>
-			</p>
-			<p>
-				<label for="writer">작성자</label>
-				<input type="text" id="writer" name="writer" value="${member.userName}" readonly="readonly" />	
-			</p>
-			<p> 
-				<button type="submit">작성</button>
-			</p>		
+		<div><img src="${path}/resources/images/별똥별.png"/></div>
+        <hr>
+			<div>
+				<b class="name">글 제목</b><br><input type="text" id="userId" name="title" />
+			</div>
+			<div>
+				<b class="name">글 내용</b><br><textarea rows="8" cols="50" id="content" name="content"></textarea>
+			</div>
+			<div>
+				<b class="name">작성자</b><br>
+				<input type="text" style="text-align:center" id="userId" name="writer" value="${member.userName}" readonly="readonly" />	
+			</div>
+			<div> 
+				<button type="submit" class="sign_up">작성</button>
+				<button type="button" class="sign_up"><a href="/board/list">취소</a></button>
+			</div>		
 		</form>
 	</c:if>
 		
@@ -34,6 +38,8 @@
 		
 		<p><a href="/">홈으로</a></p>	
 	</c:if>
+	
+	
 	
 	</section>
 

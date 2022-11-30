@@ -53,7 +53,7 @@
 			<div class="form-group">
 				<label for="content" class="col-sm-2 control-label">글 내용</label>
 				<div class="col-sm-10">
-					<textarea id="content" name="content" class="form-control" readonly="readonly" >${read.content}</textarea>
+					<textarea rows=5 id="content" name="content" class="form-control" readonly="readonly" >${read.content}</textarea>
 				</div>
 			</div>
 			<div class="form-group">

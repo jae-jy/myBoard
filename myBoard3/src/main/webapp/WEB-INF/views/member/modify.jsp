@@ -11,7 +11,7 @@
 	<div id="main"><img src="${path}/resources/images/별똥별.png"/></div>
         <hr>
 	<div>
-		<b class="name">닉네임</b><br>
+		<b class="name">새로운 닉네임</b><br>
 		<input type="text" id="userName" name="userName" value="${member.userName}"/>
 	</div>
 	

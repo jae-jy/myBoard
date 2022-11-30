@@ -46,14 +46,13 @@ header, footer, nav, aside, section  {
 }
 /* header태그 */
 header {
-    height: 30%;
+    height: 150px;
     border-top:2px solid black;
     border-bottom : 2px solid black;
     background-color:#f0f4ff;
 }
 header div{
 	height: 40px;
-	width: 1000px;
 	text-align: center;
 }
 /*nav, section, aside태그 */
