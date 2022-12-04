@@ -8,7 +8,7 @@
 <head>
 	<title>별똥별 게시판</title>
 	
-	<link href="${path}/resources/css/listStyle.css?ver" rel="stylesheet" >
+	<link href="${path}/resources/css/listStyle.css?after" rel="stylesheet" >
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,6 +18,11 @@
 
 </head>
 <body>
+<c:if test="${member != null}">
+<form>
+<p id="wel">${member.userName}님 환영합니다!</p>
+	</form>
+</c:if>
 <div id="root">
 	<header>
 		<%@include file="include/header.jsp" %>

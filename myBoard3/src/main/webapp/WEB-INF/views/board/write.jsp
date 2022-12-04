@@ -17,10 +17,10 @@
 		<div><img src="${path}/resources/images/별똥별.png"/></div>
         <hr>
 			<div>
-				<b class="name">글 제목</b><br><input type="text" id="userId" name="title" />
+				<b class="name">글 제목</b><br><input type="text" id="userId" name="title" required/>
 			</div>
 			<div>
-				<b class="name">글 내용</b><br><textarea rows="8" cols="50" id="content" name="content"></textarea>
+				<b class="name">글 내용</b><br><textarea rows="8" cols="50" id="content" name="content" required></textarea>
 			</div>
 			<div>
 				<b class="name">작성자</b><br>

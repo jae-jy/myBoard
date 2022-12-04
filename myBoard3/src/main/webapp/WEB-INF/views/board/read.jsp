@@ -92,6 +92,10 @@
 				// 수정 버튼 클릭
 				$("#modity_btn").click(function(){
 					
+					if (${member.userName != read.writer}) {
+			            alert("본인이 작성한 댓글만 수정 가능합니다.");
+			            return false;
+			        }
 					formObj.attr("action", "/board/modify");
 					formObj.attr("method", "get");		
 					formObj.submit();					
@@ -101,7 +105,10 @@
 				
 				// 삭제 버튼 클릭
 				$("#delete_btn").click(function(){
-					
+					if (${member.userName != read.writer}) {
+			            alert("본인이 작성한 댓글만 삭제 가능합니다.");
+			            return false;
+			        }
 					formObj.attr("action", "/board/delete");
 					formObj.attr("method", "get");
 					formObj.submit();
@@ -128,12 +135,20 @@
 						
 						<script> 
 							$(".replyUpdate").click(function(){
+								if (${member.userName != repList.writer}) {
+						            alert("본인이 작성한 댓글만 수정 가능합니다.");
+						            return false;
+						        }
 								self.location = "/board/replyUpdate?bno=${read.bno}" + "&page=${scri.page}"
 									+ "&perPageNum=${scri.perPageNum}" + "&searchType=${scri.searchType}"
 									+ "&keyword=${scri.keyword}" + "&rno=" + $(this).attr("data-rno");								
 							});
 							
 							$(".replyDelete").click(function(){
+								if (${member.userName != repList.writer}) {
+						            alert("본인이 작성한 댓글만 삭제 가능합니다.");
+						            return false;
+						        }
 								self.location = "/board/replyDelete?bno=${read.bno}" + "&page=${scri.page}"
 									+ "&perPageNum=${scri.perPageNum}" + "&searchType=${scri.searchType}"
 									+ "&keyword=${scri.keyword}" + "&rno=" + $(this).attr("data-rno");	
@@ -175,6 +190,14 @@
 				var formObj = $(".replyForm form[role='form']");
 										
 				$(".repSubmit").click(function(){
+					if (${member.userName == null}) {
+			            alert("로그인후 사용가능합니다.");
+			            return false;
+			        }
+					else if (${content == null}) {
+			            alert("내용을 입력해주세요.");
+			            return false;
+			        }
 					formObj.attr("action", "replyWrite");
 					formObj.submit();
 				});				

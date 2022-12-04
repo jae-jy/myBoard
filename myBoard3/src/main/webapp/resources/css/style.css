@@ -225,7 +225,8 @@ div img{
 .w-btn-yellow{
 	background-color: #fce205;
 }
-.sec01_chat{
+.sec01_chat,
+form{
 	display: inline-block;
 }
 
