@@ -209,8 +209,29 @@ header form{
 
 table{
 	margin-left: 60px;
+	
 }
 
 #wel{
 	margin-top: 20px;
+	margin-right: 20px;
+}
+
+div button{
+	background-color: #69a3bd;
+	border-color: #ffbdbdbd;
+	border-radius: 5px;
+	border-style:solid;
+	border-width: 1.2px;
+	color: black;
+}
+
+div button a{
+	color: black;
+	text-decoration: none;
+}
+
+p button:hover,
+p button a:hover{
+	color: white;
 }

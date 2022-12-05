@@ -1,0 +1,52 @@
+{
+   "emotion": [
+      {
+         "Date": 22-11-1,
+         "smile": "15",
+         "sad": "20",
+         "angry": "15",
+         "surprice": "20",
+         "nature": "15"
+      },
+           {
+         "Date": 22-11-2,
+         "smile": "15",
+         "sad": "20",
+         "angry": "15",
+         "surprice": "20",
+         "nature": "15"
+      },
+            {
+         "Date": 22-11-3,
+         "smile": "15",
+         "sad": "20",
+         "angry": "15",
+         "surprice": "20",
+         "nature": "15"
+      },
+            {
+         "Date": 22-11-4,
+         "smile": "15",
+         "sad": "20",
+         "angry": "15",
+         "surprice": "20",
+         "nature": "15"
+      },
+            {
+         "Date": 22-11-5,
+         "smile": "15",
+         "sad": "20",
+         "angry": "15",
+         "surprice": "20",
+         "nature": "15"
+      },
+            {
+         "Date": 22-11-6,
+         "smile": "15",
+         "sad": "20",
+         "angry": "15",
+         "surprice": "20",
+         "nature": "15"
+      }
+   ]
+}

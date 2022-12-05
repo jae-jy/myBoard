@@ -2,7 +2,6 @@ package com.kuzuro.controller;
 
 import java.util.List;
 
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kuzuro.domain.BoardVO;
-import com.kuzuro.domain.Criteria;
 import com.kuzuro.domain.PageMaker;
 import com.kuzuro.domain.ReplyVO;
 import com.kuzuro.domain.SearchCriteria;
@@ -141,16 +139,22 @@ if(loginInfo == null) {
 	
 	// 글 목록 + 페이징
 	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
-	public void listPage(@ModelAttribute("cri") Criteria cri, Model model) throws Exception {
+	public void listPage(@ModelAttribute("scri") SearchCriteria scri, @RequestParam("writer") String writer, Model model, HttpSession session) throws Exception {
 		logger.info("get list page");
 		
-		List<BoardVO> list = service.listPage(cri);
+		List<BoardVO> list = service.listPage(writer);
 		model.addAttribute("list", list);
 		
 		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
+		pageMaker.setCri(scri);
 		pageMaker.setTotalCount(service.listCount());
 		model.addAttribute("pageMaker", pageMaker);
+		
+		Object loginInfo = session.getAttribute("member");
+
+		if(loginInfo == null) {
+			model.addAttribute("msg", false);
+		}
 		
 	}
 	

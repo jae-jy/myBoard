@@ -178,28 +178,29 @@
 			<div class="form-group">
 				<label for="content" class="col-sm-2 control-label">댓글 내용</label>
 				<div class="col-sm-10">
-					<textarea id="content" name="content" class="form-control" ></textarea>
+					<textarea id="content" name="content" class="form-control" required></textarea>
+					 
 				</div>
 			</div>
 			
 			<div class="form-group">
 				 <div class="col-sm-offset-2 col-sm-10"> 
-					<button type="button" class="repSubmit btn btn-success">작성</button> 
+					<button type="submit" class="repSubmit btn btn-success">작성</button>
 				</div>				
 				<script>
 				var formObj = $(".replyForm form[role='form']");
+				var content = $("#content").var();
 										
 				$(".repSubmit").click(function(){
 					if (${member.userName == null}) {
 			            alert("로그인후 사용가능합니다.");
 			            return false;
 			        }
-					else if (${content == null}) {
-			            alert("내용을 입력해주세요.");
-			            return false;
-			        }
+					
+					else{
 					formObj.attr("action", "replyWrite");
 					formObj.submit();
+					}
 				});				
 				</script>				
 			</div>

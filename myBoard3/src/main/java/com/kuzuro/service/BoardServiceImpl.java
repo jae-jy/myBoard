@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.kuzuro.domain.BoardVO;
-import com.kuzuro.domain.Criteria;
 import com.kuzuro.domain.ReplyVO;
 import com.kuzuro.domain.SearchCriteria;
 import com.kuzuro.persistence.BoardDAO;
@@ -50,8 +49,8 @@ public class BoardServiceImpl implements BoardService {
  
 	// 목록 + 페이징
 	@Override
-	public List<BoardVO> listPage(Criteria cri) throws Exception {
-		return dao.listPage(cri);
+	public List<BoardVO> listPage(String writer) throws Exception {
+		return dao.listPage(writer);
 	}
 
 	// 게시물 총 갯수 

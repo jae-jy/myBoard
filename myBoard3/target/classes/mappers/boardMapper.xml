@@ -48,8 +48,8 @@
             select bno, title, content, writer, regDate, viewCnt,
                 row_number() over(order by bno desc) as rNum
             from myBoard
+            where writer = #{writer}
     		) mb 
-    	where rNum between #{rowStart} and #{rowEnd}
         	order by bno desc
 	</select>
 	

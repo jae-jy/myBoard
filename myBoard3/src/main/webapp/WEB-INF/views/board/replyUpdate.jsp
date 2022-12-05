@@ -4,6 +4,7 @@
 <html>
 <head>
 	<title>별똥별 게시판</title>
+	<link href="${path}/resources/css/registerStyle.css?after" rel="stylesheet" >
 	
 	<!-- 제이쿼리 -->
 	<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
@@ -12,15 +13,12 @@
 <body>
 
 <div id="root">
-	<header>
-		<%@include file="include/header.jsp" %>
-	</header>
-	<nav>
-		<%@include file="include/nav.jsp" %>
-	</nav>
+
 	<section id="container">
 		<form role="form" method="post" autocomplete="off">
 				
+				<div><img src="${path}/resources/images/별똥별.png"/></div>
+				<hr>
 			<input type="hidden" id="bno" name="bno" value="${readReply.bno}" readonly="readonly" />
 			<input type="hidden" id="rno" name="rno" value="${readReply.rno}" readonly="readonly" />	
 			<input type="hidden" id="page" name="page" value="${scri.page}" readonly="readonly" />
@@ -28,14 +26,14 @@
 			<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}" readonly="readonly" />
 			<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}" readonly="readonly" />
 			
-			<p>
-				<label for="content">글 내용</label>
-				<textarea id="content" name="content" >${readReply.content}</textarea>
-			</p>
+			<div>
+				<b for="content" class="name">글 내용</b><br>
+				<textarea rows="6" cols="50" id="content" name="content" >${readReply.content}</textarea>
+			</div>
 			
-			<p>
-				<button type="submit">수정</button>
-				<button type="button" id="cancel_btn">취소</button>
+			<div>
+				<button type="submit" class="sign_up">수정</button>
+				<button type="button" id="cancel_btn" class="sign_up">취소</button>
 				
 				<script>
 				// 폼을 변수에 저장
@@ -50,7 +48,7 @@
 					+ "&keyword=${scri.keyword}";
 				});
 				</script>
-			</p>	
+			</div>	
 		</form>
 	</section>
 	<footer>

@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.kuzuro.domain.BoardVO;
-import com.kuzuro.domain.Criteria;
 import com.kuzuro.domain.ReplyVO;
 import com.kuzuro.domain.SearchCriteria;
 
@@ -54,8 +53,8 @@ public class BoardDAOImpl implements BoardDAO {
 
 	// 목록 + 페이징
 	@Override
-	public List<BoardVO> listPage(Criteria cri) throws Exception {
-		return sql.selectList(namespace + ".listPage", cri);
+	public List<BoardVO> listPage(String writer) throws Exception {
+		return sql.selectList(namespace + ".listPage", writer);
 	}
 
 	// 게시물 총 갯수
