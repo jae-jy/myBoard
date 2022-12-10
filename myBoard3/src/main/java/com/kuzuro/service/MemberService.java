@@ -15,4 +15,10 @@ public interface MemberService {
 	
 	// 회원 탈퇴
 	public void withdrawal(MemberVO vo) throws Exception;
+	
+	// 아이디 중복 체크
+	public MemberVO idChk(String userId) throws Exception;
+	
+	// 닉네임 중복 체크
+	public MemberVO nameChk(String userName) throws Exception;
 }

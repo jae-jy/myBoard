@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kuzuro.domain.MemberVO;
@@ -33,7 +34,6 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String postRegister(MemberVO vo) throws Exception {
 		logger.info("post resister");
-		
 		service.register(vo);
 		
 		return "redirect:/";
@@ -115,6 +115,40 @@ public String postWithdrawal(HttpSession session, MemberVO vo, RedirectAttribute
 	session.invalidate();
 		
 	return "redirect:/";
+}
+
+//아이디 중복 체크
+@ResponseBody
+@RequestMapping(value="/idChk", method = RequestMethod.POST)
+public int postIdChk(HttpServletRequest req) throws Exception {
+	logger.info("post idChk");
+	String userId = req.getParameter("userId");
+	MemberVO idChk = service.idChk(userId);
+	
+	int result = 0;
+	
+	if(idChk != null) {
+		result = 1;
+	}
+	
+	return result;
+}
+
+//닉네임 중복 체크
+@ResponseBody
+@RequestMapping(value="/nameChk", method = RequestMethod.POST)
+public int postNameChk(HttpServletRequest req) throws Exception {
+	logger.info("post nameChk");
+	String userName = req.getParameter("userName");
+	MemberVO nameChk = service.idChk(userName);
+	
+	int result = 0;
+	
+	if(nameChk != null) {
+		result = 1;
+	}
+	
+	return result;
 }
 		
 }

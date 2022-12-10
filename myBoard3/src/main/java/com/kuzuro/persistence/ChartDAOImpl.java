@@ -20,8 +20,9 @@ public class ChartDAOImpl implements ChartDAO {
 	private static String namespace = "com.kuzuro.mappers.chartMapper";
 	
 	@Override
-	public List<ChartVO> makeChart(String userId) throws Exception {
-		return sql.selectList(namespace + ".countChart", userId);
+	public List<ChartVO> getChartList(String userId) throws Exception {
+		System.out.println("3");
+		return sql.selectList(namespace + ".getChartList", userId);
 	}
 	
 

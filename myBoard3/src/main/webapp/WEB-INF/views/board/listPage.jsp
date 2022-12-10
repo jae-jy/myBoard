@@ -61,9 +61,7 @@
 		<p><button type="button" class="sign_up"><a href="/">홈으로</a></button></p>	
 	</c:if>
 	</section>
-	<footer>
-		<%@include file="include/footer.jsp" %>		
-	</footer>
+
 </div>
 </body>
 </html>

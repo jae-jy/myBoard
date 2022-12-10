@@ -55,5 +55,7 @@ public class ChartVO {
 	public void setSurprise(int surprise) {
 		this.surprise = surprise;
 	}
+
+
 	
 }

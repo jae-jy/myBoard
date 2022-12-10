@@ -6,20 +6,22 @@
 
 <html>
 <head>
-	<title>kuzuro 게시판</title>
+	<title>별똥별 게시판</title>
+	<link href="${path}/resources/css/registerStyle.css?ver" rel="stylesheet" >
+	<!-- 제이쿼리 -->
+	<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 </head>
 <body>
 <div id="root">
-	<header>
-		<%@include file="include/header.jsp" %>
-	</header>
-	<nav>
-		<%@include file="include/nav.jsp" %>
-	</nav>
+
 	<section id="container">
+	<c:if test="${msg == null}">
+	<form role="form" method="post" autocomplete="off">
+			<div><img src="${path}/resources/images/별똥별.png"/></div>
+        <hr>
 		<h2>글 목록</h2>
 		
-		<table>
+		<table align="center">
 			<tr><th>글 번호</th><th>글 제목</th><th>작성자</th><th>작성일자</th></tr>	
 			<!-- 목록 시작 -->
 			<c:forEach items="${list}" var="list">
@@ -48,19 +50,18 @@
 				</c:if>	
 			</ul>
 		</div>
+		<div> 
+				<button type="button" class="sign_up"><a href="/board/list">메인페이지</a></button>
+			</div>	
+			</form>
+	</c:if>
+		<c:if test="${msg == false}">
+		<p>로그인을 하셔야 사용할 수 있습니다.</p>
 		
-		
+		<p><button type="button" class="sign_up"><a href="/">홈으로</a></button></p>	
+	</c:if>
 	</section>
-	<footer>
-		<%@include file="include/footer.jsp" %>		
-	</footer>
+
 </div>
 </body>
 </html>
-
-
-
-
-
-
-

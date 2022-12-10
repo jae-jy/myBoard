@@ -77,6 +77,8 @@
 			
 				<script>
 				
+
+				
 				// 폼을 변수에 저장
 				var formObj = $("form[role='form']");
 				
@@ -92,20 +94,29 @@
 				// 수정 버튼 클릭
 				$("#modity_btn").click(function(){
 					
-					formObj.attr("action", "/board/modify");
+					if (${member.userName != read.writer}) {
+			            alert("본인이 작성한 댓글만 수정 가능합니다.");
+			            return false;
+			        }
+					else{
+						formObj.attr("action", "/board/modify");
 					formObj.attr("method", "get");		
 					formObj.submit();					
-					
+					}
 				});
 				
 				
 				// 삭제 버튼 클릭
 				$("#delete_btn").click(function(){
-					
-					formObj.attr("action", "/board/delete");
+					if (${member.userName != read.writer}) {
+			            alert("본인이 작성한 댓글만 삭제 가능합니다.");
+			            return false;
+			        }
+					else{
+						formObj.attr("action", "/board/delete");
 					formObj.attr("method", "get");
 					formObj.submit();
-					
+					}
 				});
 				</script>
 			</div>	
@@ -128,15 +139,27 @@
 						
 						<script> 
 							$(".replyUpdate").click(function(){
-								self.location = "/board/replyUpdate?bno=${read.bno}" + "&page=${scri.page}"
+								if (${member.userName != repList.writer}) {
+						            alert("본인이 작성한 댓글만 수정 가능합니다.");
+						            return false;
+						        }
+								else{
+									self.location = "/board/replyUpdate?bno=${read.bno}" + "&page=${scri.page}"
 									+ "&perPageNum=${scri.perPageNum}" + "&searchType=${scri.searchType}"
-									+ "&keyword=${scri.keyword}" + "&rno=" + $(this).attr("data-rno");								
+									+ "&keyword=${scri.keyword}" + "&rno=" + $(this).attr("data-rno");
+								}
 							});
 							
 							$(".replyDelete").click(function(){
-								self.location = "/board/replyDelete?bno=${read.bno}" + "&page=${scri.page}"
+								if (${member.userName != repList.writer}) {
+						            alert("본인이 작성한 댓글만 삭제 가능합니다.");
+						            return false;
+						        }
+								else{
+									self.location = "/board/replyDelete?bno=${read.bno}" + "&page=${scri.page}"
 									+ "&perPageNum=${scri.perPageNum}" + "&searchType=${scri.searchType}"
 									+ "&keyword=${scri.keyword}" + "&rno=" + $(this).attr("data-rno");	
+								}
 							});							
 						</script>
 					</div>
@@ -156,27 +179,44 @@
 			<div class="form-group">
 				<label for="writer" class="col-sm-2 control-label">작성자</label>
 				<div class="col-sm-10">
-					<input type="text" id="writer" name="writer" class="form-control" />
+					<input type="text" id="writer" name="writer" class="form-control" value="${member.userName}" readonly="readonly"/>
 				</div>
 			</div>			
 			
 			<div class="form-group">
 				<label for="content" class="col-sm-2 control-label">댓글 내용</label>
 				<div class="col-sm-10">
-					<textarea id="content" name="content" class="form-control" ></textarea>
+					<textarea id="content" name="content" class="form-control" required></textarea>
+					 
 				</div>
 			</div>
 			
 			<div class="form-group">
 				 <div class="col-sm-offset-2 col-sm-10"> 
-					<button type="button" class="repSubmit btn btn-success">작성</button> 
+					<button id="submit" type="submit" class="repSubmit btn btn-success">작성</button>
 				</div>				
 				<script>
+				
+				$("#submit").click(function(){
+					if($("#content").val()==""){
+						alert("아이디를 입력해주세요.");
+						$("#content").focus();
+						return false;
+					}
+				});
+				
 				var formObj = $(".replyForm form[role='form']");
 										
 				$(".repSubmit").click(function(){
+					if (${member.userName == null}) {
+			            alert("로그인후 사용가능합니다.");
+			            return false;
+			        }
+					
+					else{
 					formObj.attr("action", "replyWrite");
 					formObj.submit();
+					}
 				});				
 				</script>				
 			</div>

@@ -17,7 +17,7 @@
 	<div>
 		<p>비밀번호를 다시한번 입력해주세요.</p>
 		<b class="name">비밀번호</b><br>
-		<input type="password" id="userPass" name="userPass" />
+		<input type="password" id="userPass" name="userPass" required/>
 	</div>
 	<div>
 		<p>정말로 탈퇴하시겠습니까?</p>
@@ -28,9 +28,9 @@
 </form>
 
 <c:if test="${msg == false }">
-	<p>
-	입력한 비밀번호가 잘 못 되었습니다.
-	</p>
+	<div>
+	입력한 비밀번호가 잘못 되었습니다.
+	</div>
 </c:if>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <html>
 <head>
 
-<link href="${path}/resources/css/style.css?after" rel="stylesheet" >
+<link href="${path}/resources/css/style.css?ver" rel="stylesheet" >
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,15 +21,16 @@
 <body>
     <header>
 		<h1>별똥별 게시판</h1>
-		<div><img src="${path}/resources/images/별똥별.png"/></div>
+		<div id ="photo"><img src="${path}/resources/images/별똥별.png"/></div>
 		
 
 		
 	</header>
 	
 <div class="sec01_chat">
+<form action="board/list">
+<input type="hidden" name="userId" value="%{member.user}"/>
 <button class="w-btn w-btn-skin">
-<a href="/board/list" >
 <h3>환영합니다!
 <span>
 우리아이 행복지키러 바로가기
@@ -37,19 +38,20 @@
 </span>
 
 </h3>
-
-</a>
 </button>
+</form>
 
 
+<form action="board/listSearch">
+<input type="hidden" name="userId" value="%{member.user}"/>
 
 <button class="w-btn w-btn-yellow">
-<a href="/board/listSearch">게시판</a>
+<p>게시판</p>
+</button>
+</form>
 </div>
 
 
-</div>
-		
 
 <!-- 내용 추가 -->
 <div id="child">

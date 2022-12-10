@@ -40,4 +40,18 @@ public class MemberDAOImpl implements MemberDAO {
 	public void withdrawal(MemberVO vo) throws Exception {
 		sql.delete(namespace + ".withdrawal", vo);
 	}
+	
+	// 아이디 중복 체크
+	@Override
+	public MemberVO idChk(String userId) throws Exception {
+		return sql.selectOne(namespace +".idChk", userId);
+		
+	}
+	
+	// 닉네임 중복 체크
+	@Override
+	public MemberVO nameChk(String userName) throws Exception {
+		return sql.selectOne(namespace +".NameChk", userName);
+		
+	}
 }

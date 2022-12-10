@@ -77,6 +77,8 @@
 			
 				<script>
 				
+
+				
 				// 폼을 변수에 저장
 				var formObj = $("form[role='form']");
 				
@@ -96,10 +98,11 @@
 			            alert("본인이 작성한 댓글만 수정 가능합니다.");
 			            return false;
 			        }
-					formObj.attr("action", "/board/modify");
+					else{
+						formObj.attr("action", "/board/modify");
 					formObj.attr("method", "get");		
 					formObj.submit();					
-					
+					}
 				});
 				
 				
@@ -109,10 +112,11 @@
 			            alert("본인이 작성한 댓글만 삭제 가능합니다.");
 			            return false;
 			        }
-					formObj.attr("action", "/board/delete");
+					else{
+						formObj.attr("action", "/board/delete");
 					formObj.attr("method", "get");
 					formObj.submit();
-					
+					}
 				});
 				</script>
 			</div>	
@@ -139,9 +143,11 @@
 						            alert("본인이 작성한 댓글만 수정 가능합니다.");
 						            return false;
 						        }
-								self.location = "/board/replyUpdate?bno=${read.bno}" + "&page=${scri.page}"
+								else{
+									self.location = "/board/replyUpdate?bno=${read.bno}" + "&page=${scri.page}"
 									+ "&perPageNum=${scri.perPageNum}" + "&searchType=${scri.searchType}"
-									+ "&keyword=${scri.keyword}" + "&rno=" + $(this).attr("data-rno");								
+									+ "&keyword=${scri.keyword}" + "&rno=" + $(this).attr("data-rno");
+								}
 							});
 							
 							$(".replyDelete").click(function(){
@@ -149,9 +155,11 @@
 						            alert("본인이 작성한 댓글만 삭제 가능합니다.");
 						            return false;
 						        }
-								self.location = "/board/replyDelete?bno=${read.bno}" + "&page=${scri.page}"
+								else{
+									self.location = "/board/replyDelete?bno=${read.bno}" + "&page=${scri.page}"
 									+ "&perPageNum=${scri.perPageNum}" + "&searchType=${scri.searchType}"
 									+ "&keyword=${scri.keyword}" + "&rno=" + $(this).attr("data-rno");	
+								}
 							});							
 						</script>
 					</div>
@@ -185,11 +193,19 @@
 			
 			<div class="form-group">
 				 <div class="col-sm-offset-2 col-sm-10"> 
-					<button type="submit" class="repSubmit btn btn-success">작성</button>
+					<button id="submit" type="submit" class="repSubmit btn btn-success">작성</button>
 				</div>				
 				<script>
+				
+				$("#submit").click(function(){
+					if($("#content").val()==""){
+						alert("아이디를 입력해주세요.");
+						$("#content").focus();
+						return false;
+					}
+				});
+				
 				var formObj = $(".replyForm form[role='form']");
-				var content = $("#content").var();
 										
 				$(".repSubmit").click(function(){
 					if (${member.userName == null}) {

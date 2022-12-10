@@ -33,9 +33,23 @@ public class MemberServiceImpl implements MemberService {
 		dao.modify(vo);
 	}
 
-	// 회원 탈회
+	// 회원 탈퇴
 	@Override
 	public void withdrawal(MemberVO vo) throws Exception {
 		dao.withdrawal(vo);
+	}
+	
+	// 아이디 중복 체크
+	@Override
+	public MemberVO idChk(String userId) throws Exception {
+		return dao.idChk(userId);
+
+	}
+	
+	// 닉네임 중복 체크
+	@Override
+	public MemberVO nameChk(String userName) throws Exception {
+		return dao.idChk(userName);
+
 	}
 } 
