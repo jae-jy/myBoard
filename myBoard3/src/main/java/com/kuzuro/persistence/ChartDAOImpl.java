@@ -21,7 +21,6 @@ public class ChartDAOImpl implements ChartDAO {
 	
 	@Override
 	public List<ChartVO> getChartList(String userId) throws Exception {
-		System.out.println("3");
 		return sql.selectList(namespace + ".getChartList", userId);
 	}
 	

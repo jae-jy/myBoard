@@ -32,7 +32,7 @@ a{
 .sign_up a:hover{
 	color: white;
 }
-div{
+div:not(.chart_div){
     text-align: center;
      margin-bottom: 30px;
 }

@@ -38,7 +38,7 @@ public class ChartServiceImpl implements ChartService{
         //json 배열 객체, 배열에 저장할때는 JSONArray()를 사용
         JSONArray title = new JSONArray();
         col1.put("label","날짜"); //col1에 자료를 저장 ("필드이름","자료형")
-        col1.put("type", "datetime");
+        col1.put("type", "string");
         col2.put("label", "smile");
         col2.put("type", "number");
         col3.put("label", "sad");
@@ -64,6 +64,8 @@ public class ChartServiceImpl implements ChartService{
         JSONArray body = new JSONArray(); //json 배열을 사용하기 위해 객체를 생성
         for (ChartVO vo : list) { //items에 저장된 값을 dto로 반복문을 돌려서 하나씩 저장한다.
             
+        	JSONObject date = new JSONObject(); //json
+            date.put("v", vo.getDate()); 
             
             JSONObject smile = new JSONObject(); //json오브젝트 객체를 생성
             smile.put("v", vo.getSmile()); //name변수에 dto에 저장된 금액을 v라고 저장한다.
@@ -78,6 +80,7 @@ public class ChartServiceImpl implements ChartService{
             surprise.put("v", vo.getSurprise()); //name변수에 dto에 저장된 금액을 v라고 저장한다.
             
             JSONArray row = new JSONArray(); //json 배열 객체 생성 (위에서 저장한 변수를 칼럼에 저장하기위해)
+            row.add(date);
             row.add(smile); //name을 row에 저장 (테이블의 행)
             row.add(sad); //name을 row에 저장 (테이블의 행)
             row.add(angry);

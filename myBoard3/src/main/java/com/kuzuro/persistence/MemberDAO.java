@@ -20,6 +20,6 @@ public interface MemberDAO {
 	public MemberVO idChk(String userId) throws Exception;
 	
 	// 닉네임 중복체크
-		public MemberVO nameChk(String userName) throws Exception;
+	public MemberVO nameChk(String userName) throws Exception;
 	
 }

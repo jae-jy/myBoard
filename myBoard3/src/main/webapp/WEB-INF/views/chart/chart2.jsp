@@ -4,7 +4,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-	<link href="${path}/resources/css/registerStyle.css?after" rel="stylesheet" >
+	<link href="${path}/resources/css/registerStyle.css?ver" rel="stylesheet" >
 <!-- 구글 차트를 호출하기 위한 js 파일 라이브러리 -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <title>별똥별 게시판</title>
@@ -20,13 +20,19 @@ google.load("visualization", "1",{
 google.setOnLoadCallback(drawChart);
 
 function drawChart(){
-	var jsonData = $.ajax({
-		url:"${path}/chart/chart_json",
-		dataType:"json",
-		async:false
-	}).responseText;
+//	var jsonData = $.ajax({
+//		type : "GET",
+//		url:"/chart/chart_json?userId=${member.userName}",
+//		//url: "/resources/json/sampleData.json",
+//		dataType:"json",
+//		async:false,
+//	}).responseText;
+	
+
+	var jsonData = ${jo}
 	
 	console.log("jsonData : " + jsonData);
+
 	
 	//차트객체.draw(데이터테이블, 옵션)
 	var data = new google.visualization.DataTable(jsonData);
@@ -35,7 +41,7 @@ function drawChart(){
 //	var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"));
 	
 	chart.draw(data,{
-		title:"상품 별 판매 금액 합계 차트",
+		title:"감정 별 정확률 차트",
 		curveType:"function",
 		width:600,
 		height:440
@@ -49,11 +55,11 @@ function drawChart(){
 <c:if test="${msg == null}">
 	<form role="form" method="post" autocomplete="off">
 		<div>
-			<b class="name">작성자</b><br>
+			<b class="name">사용자</b><br>
 			<input type="text" style="text-align:center" id="userId" name="writer" value="${member.userName}" readonly="readonly" />	
 		</div>
     	<!-- 차트 출력 영역 -->
-    	<div id="chart_div"></div>
+    	<div id="chart_div" style="align:center; margin-left: 300px;"></div>
     	<!-- 차트가 그려지는 영역 -->
     	<!-- 차트 새로고침 버튼 -->
     	<div><button class="sign_up" id="btn" type="button" onclick="drawChart()">refresh</button></div>

@@ -4,7 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kuzuro.mappers.chartMapper">
  <select id="getChartList" resultType="com.kuzuro.domain.ChartVO">
-        select userId, useDate, smile, sad, angry, surprise from myChart
+        select userId, useDate, smile, sad, angry, surprise 
+        from myChart
         where userId=#{userId} 
         order by useDate   
     </select>

@@ -11,13 +11,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.kuzuro.domain.ChartVO;
+import com.kuzuro.domain.MemberVO;
 import com.kuzuro.service.ChartService;
+
+
 
 @Controller //json을 리턴하는 method가 있는 경우
 @RequestMapping("/chart/*") //공통적인 맵핑 url
-
 public class ChartController {
     
 private static final Logger logger = LoggerFactory.getLogger(ChartController.class);
@@ -36,17 +38,28 @@ private static final Logger logger = LoggerFactory.getLogger(ChartController.cla
 		
 		
 		Object loginInfo = session.getAttribute("member");
+	      MemberVO memberVO = (MemberVO) loginInfo;
+	      String userName = memberVO.getUserName();
+
+		
+		//return "/board/listPage";
 		
 		if(loginInfo == null) {
 		model.addAttribute("msg", false);
 		}
+		
+		JSONObject jo = service.getChartJSON(userName);
+		model.addAttribute("jo", jo);
+
 				
 		return "/chart/chart2";//json데이터를 호출한 곳으로 되돌려준다.
 			}
-	
+
+
 	//리스트 조회(cart)
-	@RequestMapping(value = "/chart_json" , method = RequestMethod.POST)
-	public JSONObject getChartList(Model model,HttpSession session, ChartVO vo, @RequestParam("userId") String userId) throws Exception {
+	@ResponseBody
+	@RequestMapping(value = "/chart_json" , method = {RequestMethod.POST, RequestMethod.GET}, produces={"application/json"})
+	public JSONObject getChartList(@RequestParam("userId") String userId) throws Exception {
 		logger.info("post chart");
 		
 

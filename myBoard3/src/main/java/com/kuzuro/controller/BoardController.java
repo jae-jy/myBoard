@@ -27,6 +27,7 @@ import com.kuzuro.service.ReplyService;
 @RequestMapping("/board/*")
 public class BoardController {
 
+	
 private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@Inject
@@ -247,10 +248,11 @@ public void getReplyDelete(@RequestParam("rno") int rno,
 	
 	model.addAttribute("readReply", vo);
 	model.addAttribute("scri", scri);
+	
 }
 	
 
-	
+
 	   
 }
 

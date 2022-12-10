@@ -21,4 +21,5 @@ public interface MemberService {
 	
 	// 닉네임 중복 체크
 	public MemberVO nameChk(String userName) throws Exception;
+
 }
