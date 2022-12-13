@@ -17,6 +17,8 @@
 	<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	
+	<script type='text/javascript' src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	
 </head>
 <body>
 
@@ -77,8 +79,7 @@
 			
 				<script>
 				
-
-				
+				$(document).ready(function(){
 				// 폼을 변수에 저장
 				var formObj = $("form[role='form']");
 				
@@ -98,11 +99,11 @@
 			            alert("본인이 작성한 댓글만 수정 가능합니다.");
 			            return false;
 			        }
-					else{
-						formObj.attr("action", "/board/modify");
+					
+					formObj.attr("action", "/board/modify");
 					formObj.attr("method", "get");		
 					formObj.submit();					
-					}
+					
 				});
 				
 				
@@ -112,12 +113,14 @@
 			            alert("본인이 작성한 댓글만 삭제 가능합니다.");
 			            return false;
 			        }
-					else{
-						formObj.attr("action", "/board/delete");
+					
+					formObj.attr("action", "/board/delete");
 					formObj.attr("method", "get");
 					formObj.submit();
-					}
+					
 				});
+				})
+
 				</script>
 			</div>	
 			

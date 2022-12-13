@@ -6,6 +6,8 @@ public interface ChartService {
 	
 	//리스트 조회(cart)
 	public JSONObject getChartJSON(String userId) throws Exception ;
+	
+	public JSONObject dayChartJSON(String userId) throws Exception ;
 
 }
  

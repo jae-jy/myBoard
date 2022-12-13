@@ -24,6 +24,11 @@ public class ChartDAOImpl implements ChartDAO {
 		return sql.selectList(namespace + ".getChartList", userId);
 	}
 	
+	@Override
+	public List<ChartVO> dayChartList(String userId) throws Exception {
+		return sql.selectList(namespace + ".dayChartList", userId);
+	}
+	
 
 }
 		

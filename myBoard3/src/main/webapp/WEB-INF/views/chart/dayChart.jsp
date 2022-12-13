@@ -19,36 +19,38 @@ google.load("visualization", "1",{
 //JSON.stringify(j/s객체) : javascript 객체를 json 데이터를 읽어들임
 google.setOnLoadCallback(drawChart);
 
-	function drawChart(){
-//		var jsonData = $.ajax({
-//			type : "GET",
-//			url:"/chart/chart_json?userId=${member.userName}",
-//			//url: "/resources/json/sampleData.json",
-//			dataType:"json",
-//			async:false,
-//		}).responseText;
-		
-		
-		var jsonData = ${jo}
-		
-		console.log("jsonData : " + jsonData);
+function drawChart(){
+//	var jsonData = $.ajax({
+//		type : "GET",
+//		url:"/chart/chart_json?userId=${member.userName}",
+//		//url: "/resources/json/sampleData.json",
+//		dataType:"json",
+//		async:false,
+//	}).responseText;
+	
 
+	var jsonData = ${jo}
+	
+	console.log("jsonData : " + jsonData);
 
-		//차트객체.draw(데이터테이블, 옵션)
-		var data = new google.visualization.DataTable(jsonData);
-	 	var chart = new google.visualization.LineChart(document.getElementById("chart_div"))
-//	 	var chart = new google.visualization.PieChart(document.getElementById("chart_div"));
-//		var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"));
-		
-		chart.draw(data,{
-			title:"감정 별 정확률 차트",
-		//	curveType:"function",
-			height:440
-		});
-		
-		
-	}
-
+	
+	//차트객체.draw(데이터테이블, 옵션)
+	var data = new google.visualization.DataTable(jsonData);
+ 	var chart = new google.visualization.LineChart(document.getElementById("chart_div"))
+// 	var chart = new google.visualization.PieChart(document.getElementById("chart_div"));
+//	var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"));
+	
+//	var today = new Date();
+//	var today2 = dateFormat(today)
+//	var str1 = today2.toString();
+	
+	chart.draw(data,{
+		title: new Date() +" "+ "감정 별 정확률 차트",
+	//	curveType:"function",
+		height:440
+	});
+	
+}
 </script>
 </head>
 <body>
@@ -63,9 +65,8 @@ google.setOnLoadCallback(drawChart);
     	<!-- 차트 출력 영역 -->
     	<div id="chart_div"></div>
     	<!-- 차트가 그려지는 영역 -->
-    	
-    </form>
 
+    </form>
 
 </section>
 </div>

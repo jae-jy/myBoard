@@ -8,6 +8,6 @@ public interface ChartDAO {
 	
 	public List<ChartVO> getChartList(String userId) throws Exception;
 
-	
+	public List<ChartVO> dayChartList(String userId) throws Exception;
 
 }

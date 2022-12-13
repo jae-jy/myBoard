@@ -10,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kuzuro.domain.MemberVO;
 import com.kuzuro.service.ChartService;
@@ -29,7 +27,7 @@ private static final Logger logger = LoggerFactory.getLogger(ChartController.cla
 	
 	//차트그리기(chart)
 	@RequestMapping(value = "/chart2", method = RequestMethod.GET)
-	public String makeChart(HttpSession session, Model model) throws Exception {
+	public void makeChart(HttpSession session, Model model) throws Exception {
 		logger.info("get makeChart");
 		
 	//	List<ChartVO> cntChart = service.getChartJSON(userId);
@@ -44,32 +42,49 @@ private static final Logger logger = LoggerFactory.getLogger(ChartController.cla
 		
 		//return "/board/listPage";
 		
+
+		if(userName == null) {
+		model.addAttribute("msg", false);
+		}else if (userName != null) {
+			JSONObject jo = service.getChartJSON(userName);
+			model.addAttribute("jo", jo);
+		}
+				
+		//return "/chart/chart2";//json데이터를 호출한 곳으로 되돌려준다.
+		
+		
+			}
+	
+	@RequestMapping(value = "/dayChart", method = RequestMethod.GET)
+	public void makeDayChart(HttpSession session, Model model) throws Exception {
+		logger.info("get dayChart");
+		
+	//	List<ChartVO> cntChart = service.getChartJSON(userId);
+	//	model.addAttribute("makeChart", cntChart);
+	//	session.setAttribute("makeChart", cntChart);
+
+		
+		Object loginInfo = session.getAttribute("member");
+	      MemberVO memberVO = (MemberVO) loginInfo;
+	      String userName = memberVO.getUserName();
+
+		
+		//return "/board/listPage";
+		
+
+		
+		JSONObject jo = service.dayChartJSON(userName);
+		model.addAttribute("jo", jo);
+
 		if(loginInfo == null) {
 		model.addAttribute("msg", false);
 		}
-		
-		JSONObject jo = service.getChartJSON(userName);
-		model.addAttribute("jo", jo);
-
 				
-		return "/chart/chart2";//json데이터를 호출한 곳으로 되돌려준다.
+		//return "/chart/chart2";//json데이터를 호출한 곳으로 되돌려준다.
+		
+		
 			}
 
 
-	//리스트 조회(cart)
-	@ResponseBody
-	@RequestMapping(value = "/chart_json" , method = {RequestMethod.POST, RequestMethod.GET}, produces={"application/json"})
-	public JSONObject getChartList(@RequestParam("userId") String userId) throws Exception {
-		logger.info("post chart");
-		
 
-	//      Object loginInfo = session.getAttribute("member");
-	//      MemberVO memberVO = (MemberVO) loginInfo;
-	//      String userId1 = memberVO.getUserName();
-
-	      
-		return service.getChartJSON(userId);
-		
-
-	}
 	}

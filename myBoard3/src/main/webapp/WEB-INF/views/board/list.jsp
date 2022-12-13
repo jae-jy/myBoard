@@ -8,7 +8,7 @@
 <head>
 	<title>별똥별 게시판</title>
 	
-	<link href="${path}/resources/css/listStyle.css?after" rel="stylesheet" >
+	<link href="${path}/resources/css/listStyle.css?ver" rel="stylesheet" >
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,6 +17,37 @@
 	<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MWRTFRM"></script>
 
 </head>
+<script>
+    	function service1(){
+    		let signIn = "${member.userName}";
+    		if (signIn == ""){
+    			alert("서비스 페이지는 로그인 후 사용하실 수 있습니다.");
+    			location.href="${path}/board/list";
+    		} else {
+    			location.href="${path}/chart/chart2"
+    		}
+    	}
+    	
+    	function service2(){
+    		let signIn = "${member.userName}";
+    		if (signIn == ""){
+    			alert("서비스 페이지는 로그인 후 사용하실 수 있습니다.");
+    			location.href="${path}/board/list";
+    		} else {
+    			location.href="${path}/chart/dayChart"
+    		}
+    	}
+    	
+    	function service3(){
+    		let signIn = "${member.userName}";
+    		if (signIn == ""){
+    			alert("서비스 페이지는 로그인 후 사용하실 수 있습니다.");
+    			location.href="${path}/board/list";
+    		} else {
+    			location.href="${path}/board/listPage?writer=${member.userName}"
+    		}
+    	}
+    </script>
 <body>
 <c:if test="${member != null}">
 <form>
@@ -34,10 +65,9 @@
             <nav>
                 <p>내아이 지킴이</p>
                 <ul>
-                    <li><a href="/chart/chart2?userId=${member.userName}">내아이 성장과정</a></li>
-                    <li><a href="http://www.google.com">내아이 사진보기</a></li>
-                    <li><a href="https://www.google.com">오늘의 기록</a></li>
-                    <li><a href="/board/listPage?writer=${member.userName}">내글 보기</a></li>
+                    <li><a class="chButton" onclick="service1()">내아이 성장과정</a></li>
+                    <li><a class="chButton" onclick="service2()">오늘의 기록</a></li>
+                    <li><a class="chButton" onclick="service3()">내글 보기</a></li>
                 </ul>
             </nav>
             

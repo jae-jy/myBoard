@@ -9,5 +9,16 @@
         where userId=#{userId} 
         order by useDate   
     </select>
+    
+     <select id="dayChartList" resultType="com.kuzuro.domain.ChartVO">
+        select userId, useDate, smile, sad, angry, surprise 
+        from myChart
+        where userId=#{userId} 
+        	  AND 
+			  TO_CHAR(useDate,'yyyymmdd') = TO_CHAR(SYSDATE,'yyyymmdd') 
+        order by useDate   
+    </select>
+    
+    
 </mapper>
 
