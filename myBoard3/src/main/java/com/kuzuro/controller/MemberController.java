@@ -140,7 +140,7 @@ public int postIdChk(HttpServletRequest req) throws Exception {
 public int postNameChk(HttpServletRequest req) throws Exception {
 	logger.info("post nameChk");
 	String userName = req.getParameter("userName");
-	MemberVO nameChk = service.idChk(userName);
+	MemberVO nameChk = service.nameChk(userName);
 	
 	int result = 0;
 	
