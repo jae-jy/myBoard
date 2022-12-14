@@ -45,8 +45,8 @@ function drawChart(){
 //	var str1 = today2.toString();
 	
 	chart.draw(data,{
-		title: new Date() +" "+ "감정 별 정확률 차트",
-	//	curveType:"function",
+		title:  "<오늘 자> 감정 별 정확률 차트",
+		curveType:"function",
 		height:440
 	});
 	

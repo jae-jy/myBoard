@@ -20,7 +20,7 @@
 </head>
 <body>
     <header>
-		<h1>별똥별 게시판</h1>
+		<h1>별똥별 게시판 &#128171;</h1>
 		<div id ="photo"><img src="${path}/resources/images/별똥별.png"/></div>
 		
 

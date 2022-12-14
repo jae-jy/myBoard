@@ -42,7 +42,7 @@ google.setOnLoadCallback(drawChart);
 		
 		chart.draw(data,{
 			title:"감정 별 정확률 차트",
-		//	curveType:"function",
+			curveType:"function",
 			height:440
 		});
 		

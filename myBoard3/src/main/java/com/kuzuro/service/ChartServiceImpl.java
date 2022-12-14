@@ -39,7 +39,7 @@ public class ChartServiceImpl implements ChartService{
         JSONArray title = new JSONArray();
         col1.put("label","날짜"); //col1에 자료를 저장 ("필드이름","자료형")
         col1.put("type", "string");
-        col2.put("label", "smile");
+        col2.put("label", "happy");
         col2.put("type", "number");
         col3.put("label", "sad");
         col3.put("type", "number");
@@ -67,8 +67,8 @@ public class ChartServiceImpl implements ChartService{
         	JSONObject date = new JSONObject(); //json
             date.put("v", vo.getDate()); 
             
-            JSONObject smile = new JSONObject(); //json오브젝트 객체를 생성
-            smile.put("v", vo.getSmile()); //name변수에 dto에 저장된 금액을 v라고 저장한다.
+            JSONObject happy = new JSONObject(); //json오브젝트 객체를 생성
+            happy.put("v", vo.getSmile()); //name변수에 dto에 저장된 금액을 v라고 저장한다.
             
             JSONObject sad = new JSONObject(); //json오브젝트 객체를 생성
             sad.put("v", vo.getSad()); //name변수에 dto에 저장된 금액을 v라고 저장한다.
@@ -81,7 +81,7 @@ public class ChartServiceImpl implements ChartService{
             
             JSONArray row = new JSONArray(); //json 배열 객체 생성 (위에서 저장한 변수를 칼럼에 저장하기위해)
             row.add(date);
-            row.add(smile); //name을 row에 저장 (테이블의 행)
+            row.add(happy); //name을 row에 저장 (테이블의 행)
             row.add(sad); //name을 row에 저장 (테이블의 행)
             row.add(angry);
             row.add(surprise);
@@ -117,7 +117,7 @@ public class ChartServiceImpl implements ChartService{
         JSONArray title = new JSONArray();
         col1.put("label","날짜"); //col1에 자료를 저장 ("필드이름","자료형")
         col1.put("type", "string");
-        col2.put("label", "smile");
+        col2.put("label", "happy");
         col2.put("type", "number");
         col3.put("label", "sad");
         col3.put("type", "number");
@@ -145,8 +145,8 @@ public class ChartServiceImpl implements ChartService{
         	JSONObject date = new JSONObject(); //json
             date.put("v", vo.getDate()); 
             
-            JSONObject smile = new JSONObject(); //json오브젝트 객체를 생성
-            smile.put("v", vo.getSmile()); //name변수에 dto에 저장된 금액을 v라고 저장한다.
+            JSONObject happy = new JSONObject(); //json오브젝트 객체를 생성
+            happy.put("v", vo.getSmile()); //name변수에 dto에 저장된 금액을 v라고 저장한다.
             
             JSONObject sad = new JSONObject(); //json오브젝트 객체를 생성
             sad.put("v", vo.getSad()); //name변수에 dto에 저장된 금액을 v라고 저장한다.
@@ -159,7 +159,7 @@ public class ChartServiceImpl implements ChartService{
             
             JSONArray row = new JSONArray(); //json 배열 객체 생성 (위에서 저장한 변수를 칼럼에 저장하기위해)
             row.add(date);
-            row.add(smile); //name을 row에 저장 (테이블의 행)
+            row.add(happy); //name을 row에 저장 (테이블의 행)
             row.add(sad); //name을 row에 저장 (테이블의 행)
             row.add(angry);
             row.add(surprise);

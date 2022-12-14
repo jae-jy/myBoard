@@ -8,14 +8,17 @@
 <head>
 	<title>별똥별 게시판</title>
 	
-	<link href="${path}/resources/css/listStyle.css?ver" rel="stylesheet" >
+	
+	<link href="${path}/resources/css/listStyle.css?after" rel="stylesheet" >
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
 	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154128423-1&amp;l=dataLayer&amp;cx=c"></script>
 	<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MWRTFRM"></script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <script>
     	function service1(){
@@ -58,16 +61,15 @@
 <div id="root">
 	<header>
 		<%@include file="include/header.jsp" %>
-		
 	</header>
 	<!--네비게이션-->
             <div id = "board1">
             <nav>
-                <p>내아이 지킴이</p>
+                <p>내아이 지킴이&#127752;</p>
                 <ul>
-                    <li><a class="chButton" onclick="service1()">내아이 성장과정</a></li>
-                    <li><a class="chButton" onclick="service2()">오늘의 기록</a></li>
-                    <li><a class="chButton" onclick="service3()">내글 보기</a></li>
+                    <li><a style="text-align:left" class="chButton" onclick="service1()">내아이 성장과정</a></li>
+                    <li><a style="text-align:left" class="chButton" onclick="service2()">오늘의 기록</a></li>
+                    <li><a style="text-align:left" class="chButton" onclick="service3()">내 글 보기</a></li>
                 </ul>
             </nav>
             
@@ -75,7 +77,7 @@
 	<section>
 	
 
-		<p><a href="/board/listSearch">엄마·아빠들의 커뮤니티</a></p>
+		<p><a href="/board/listSearch">엄마·아빠들의 커뮤니티 &#128106;</a></p>
 		
 		<table>
 			<tr><th>글 번호</th><th>글 제목</th><th>작성자</th><th>작성일자</th></tr>	
@@ -94,7 +96,7 @@
 	
 	
 	<nav>
-	<p>메뉴</p>
+	<p>메뉴&#127826;</p>
 		<%@include file="include/nav.jsp" %>
 	</nav>
 	</div>
